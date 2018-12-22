@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_22_190509) do
+ActiveRecord::Schema.define(version: 2018_12_22_190611) do
 
   create_table "charges", force: :cascade do |t|
     t.boolean "paid"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2018_12_22_190509) do
     t.boolean "refunded"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
+    t.index ["customer_id"], name: "index_charges_on_customer_id"
   end
 
   create_table "customers", force: :cascade do |t|
