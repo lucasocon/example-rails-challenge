@@ -4,7 +4,7 @@ class Charge < ApplicationRecord
   def as_json
     {
       id: id,
-      created: created_at.to_i
+      created: created_at.to_i,
       paid: paid,
       amount: amount,
       currency: currency,
