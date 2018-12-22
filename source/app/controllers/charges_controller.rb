@@ -1,5 +1,7 @@
 class ChargesController < ApplicationController
   def index
-    @charges = Charge.all
+    @successful = Charge.successful
+    @failed = Charge.failed
+    @disputed = Charge.disputed
   end
 end
